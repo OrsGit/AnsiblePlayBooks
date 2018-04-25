@@ -1,0 +1,39 @@
+---
+
+#
+# Example - Vagrant Template
+#
+- name: webMachine
+  hostname: web1
+  box: centos/7
+  ram: 4096
+  cpu: 2
+  nics:
+    - ip: 192.168.100.24  
+      netmask: 255.255.255.0
+    - device: eno1
+      ip: 192.168.100.25
+      netmask: 255.255.255.0
+#  blks:
+#    - size: 20G
+#    - size: 45G
+#    - size: 15G
+#
+- name: dbMachine
+  hostname: db1
+  box: centos/7
+  ram: 2048
+  cpu: 2
+  nics:
+    - ip: 192.168.100.26
+      netmask: 255.255.255.0
+#    - ip: 20.0.0.21
+#      netmask: 255.255.255.0
+    - device: eno1
+#      ip: 10.3.3.61
+#      netmask: 255.255.255.0
+#  blks:
+#    - size: 10G
+#    - size: 20G
+
+

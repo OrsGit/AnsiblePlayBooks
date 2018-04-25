@@ -1,0 +1,12 @@
+---
+- name: Ensure MySQL is installed
+  yum: name=mysql-server state=present
+
+- name: Start MySQL
+  service: name=mysqld state=started 
+
+- parted:
+    device: /dev/sda
+    number: 4
+    state: present
+    part_end: 1GiB
